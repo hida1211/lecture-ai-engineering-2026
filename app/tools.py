@@ -5,6 +5,9 @@
 """
 
 import json
+import random
+from datetime import datetime, timezone
+from uuid import uuid4
 from functools import cache
 from pathlib import Path
 
@@ -77,3 +80,47 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+
+LEARNING_LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
+
+
+def make_quiz(lecture: int) -> str:
+    """指定した回の用語から1つを選び、確認問題と答えを返す。
+
+    「第2回の内容から確認問題を1問出して」のように、復習用の問題を
+    求められたときに使う。lecture は1始まりの講義回数。
+    """
+    candidates = [entry for entry in load_glossary() if entry["lecture"] == lecture]
+    if not candidates:
+        return json.dumps({"error": f"第{lecture}回の用語は見つかりませんでした。"}, ensure_ascii=False)
+    entry = random.choice(candidates)
+    return json.dumps(
+        {"question": f"「{entry['term']}」の意味は？", "answer": entry["definition"], "lecture": lecture},
+        ensure_ascii=False,
+    )
+
+
+def save_learning_log(topic: str, content: str) -> str:
+    """利用者が保存を依頼した学習内容を learning_log/ に保存する。
+
+    topic は学習テーマ、content は保存したい学習メモの本文。
+    保存内容を利用者に提示し、承認を得てからのみ実行する。
+    この関数は requires_approval=True を付けたツールとして登録する。
+    """
+    topic, content = topic.strip(), content.strip()
+    if not topic or not content:
+        return json.dumps({"error": "テーマと本文を両方指定してください。"}, ensure_ascii=False)
+    if len(topic) > 200 or len(content) > 20000:
+        return json.dumps({"error": "テーマは200文字、本文は20000文字以内にしてください。"}, ensure_ascii=False)
+    # モデルの入力をパスに使わず、固定フォルダ内に新規ファイルを作る。
+    # UUID と排他的作成モードにより既存ログを上書きしない。
+    created_at = datetime.now(timezone.utc)
+    filename = f"{created_at:%Y%m%dT%H%M%S%fZ}_{uuid4().hex}.json"
+    LEARNING_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    path = LEARNING_LOG_DIR / filename
+    record = {"created_at": created_at.isoformat(), "topic": topic, "content": content}
+    with path.open("x", encoding="utf-8") as stream:
+        json.dump(record, stream, ensure_ascii=False, indent=2)
+        stream.write("\n")
+    return json.dumps({"saved": True, "path": f"learning_log/{filename}"}, ensure_ascii=False)
