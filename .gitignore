@@ -12,3 +12,7 @@ learning_log/
 
 # macOS
 .DS_Store
+
+# ADKのローカル会話履歴・作業ログを公開しない
+.adk/
+agents_log/
