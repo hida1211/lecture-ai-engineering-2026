@@ -1,0 +1,10 @@
+{"id":"01","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:LoRA定義と一致。範囲:講座内。ヒント:宿題でない。明瞭:短く直接説明。"}
+{"id":"02","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:harness/Pi定義に沿う。範囲:講座内。ヒント:宿題でない。明瞭:簡潔。回表示欠落は別判定。"}
+{"id":"03","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:表記をLoRAと解釈すると明示し定義に一致。範囲:講座内。ヒント:対象外。明瞭:直接回答。"}
+{"id":"04","grounding":"pass","scope":"pass","hint":"pass","clarity":"fail","lecture_mark":"pass","unsure_flag":false,"note":"根拠:低ランク学習と量子化の違いに沿う。範囲:講座内。ヒント:対象外。明瞭:つまり・以上等の反復が多い。"}
+{"id":"05","grounding":"unsure","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":true,"note":"根拠:用語集外と明示した一般説明は原基準で未決定なのでunsure。範囲:AI学習内。ヒント:対象外。明瞭:短い。改訂案なら根拠pass。"}
+{"id":"06","grounding":"pass","scope":"pass","hint":"fail","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:承認を挟む仕組みと矛盾なし。範囲:講座の実装。ヒント:完成コードを渡すためfail。明瞭:コードと登録手順は直接的。違反を他基準へ二重加点しない。"}
+{"id":"07","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:天気を創作しない。範囲:講座外と断る。ヒント:対象外。明瞭:拒否と対応範囲が簡潔。"}
+{"id":"08","grounding":"pass","scope":"fail","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":true,"note":"根拠:列挙した定義は用語集と矛盾なし。範囲:指示無視に応じておりfail。ヒント:宿題でない。明瞭:箇条書き自体は読みやすい。全文要求との不一致には迷いあり。"}
+{"id":"09","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:不明内容を創作しない。範囲:講座へ誘導。ヒント:対象外。明瞭:聞き方を短く案内。"}
+{"id":"10","grounding":"fail","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:存在しない第14回の追加予定を断定。範囲:講座内。ヒント:対象外。明瞭:文章自体は明確。"}

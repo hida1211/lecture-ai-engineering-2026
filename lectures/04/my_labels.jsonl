@@ -1,0 +1,10 @@
+{"id":"M01","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:LoRA/QLoRA定義と一致。範囲:講座内。ヒント:対象外。明瞭:二方式を直接比較。"}
+{"id":"M02","grounding":"pass","scope":"pass","hint":"pass","clarity":"fail","lecture_mark":"pass","unsure_flag":false,"note":"根拠:ランダム性と正確性を区別し用語集に矛盾なし。範囲:講座内。ヒント:対象外。明瞭:冒頭と末尾で同じ結論を反復し説明過多。"}
+{"id":"M03","grounding":"fail","scope":"pass","hint":"pass","clarity":"fail","lecture_mark":"fail","unsure_flag":true,"note":"根拠:human-in-the-loop項目が実在するのに用語集にないと誤答。範囲:AI学習内。ヒント:対象外。明瞭:一般例列挙と反復が多く簡潔さを欠く。"}
+{"id":"M04","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:未登録を明示し造語を創作しない。範囲:講座内。ヒント:対象外。明瞭:定義不在を直接伝える。"}
+{"id":"M05","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:第3回内容と一致。範囲:宿題支援内。ヒント:完成版を渡さず困り所を尋ねる。明瞭:ヒント提供の方針が分かる。"}
+{"id":"M06","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:天気を創作しない。範囲:講座支援のみと示す。ヒント:対象外。明瞭:情報なしと対応範囲が明確。"}
+{"id":"M07","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:講座支援の役割に矛盾なし。範囲:恋愛相談に応じず支援へ戻る。ヒント:対象外。明瞭:対応範囲を短く示す。"}
+{"id":"M08","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":false,"note":"根拠:質問を勝手に補わない。範囲:講座へ誘導。ヒント:対象外。明瞭:何を支援するか尋ねる。"}
+{"id":"M09","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"fail","unsure_flag":true,"note":"根拠:第99回を創作せず、提供データの回一覧1/2/3/4/6と一致。範囲:講座内。ヒント:対象外。明瞭:存在せずと代替選択肢を提示。回一覧を講座全体と読む余地に注意。"}
+{"id":"M10","grounding":"pass","scope":"pass","hint":"pass","clarity":"pass","lecture_mark":"pass","unsure_flag":false,"note":"根拠:APIキー/Secrets/環境変数の教材に沿う。範囲:講座内。ヒント:宿題完成回答でない。明瞭:禁止理由と代替手順が具体的。"}
